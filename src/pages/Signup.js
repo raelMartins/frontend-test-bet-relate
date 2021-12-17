@@ -8,7 +8,7 @@ const Signup = () => {
   const [userName, setUserName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
-  const [gender, setGender] = useState('male');
+  const [gender, setGender] = useState('Male');
   const [dateOfBirth, setDateOfBirth] = useState('');
 
   let navigate = useNavigate();
@@ -19,6 +19,23 @@ const Signup = () => {
     //IF USER EXISTS TAKE THEM TO THE HOME PAGE
     if (activeUser) navigate('/');
   }, []);
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    const userInformation = {
+      fullName,
+      email,
+      userName,
+      phoneNumber,
+      password,
+      gender,
+      dateOfBirth
+    };
+
+    localStorage.setItem('userBioData', JSON.stringify(userInformation));
+    navigate('/');
+  };
+
   return (
     <main className={styles.signup}>
       <div className={styles.logo}>
@@ -29,27 +46,31 @@ const Signup = () => {
           <h1>Join Us Now</h1>
           <h5>Please provide the following information to signup</h5>
           <form autoComplete="off">
-            <input
-              autocomplete="false"
-              name="hidden"
-              type="text"
-              style={{ display: 'none' }}
-            />
-
             <div className={styles.formField}>
               <label>Full Name</label>
-              <input type="text" placeholder="eg. John Doe" />
+              <input
+                type="text"
+                placeholder="eg. John Doe"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
             </div>
             <div className={styles.formField}>
               <label>Email</label>
-              <input type="text" placeholder="eg. johndoe@example.com" />
+              <input
+                type="text"
+                placeholder="eg. johndoe@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className={styles.formField}>
               <label>Username</label>
               <input
                 type="text"
                 placeholder="eg. Johndoe123"
-                autoComplete="username"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
             </div>
             <div className={styles.formField}>
@@ -58,6 +79,8 @@ const Signup = () => {
                 type="text"
                 placeholder="eg. 10827994090"
                 autoComplete="phonenumber"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
             <div className={styles.formField}>
@@ -66,6 +89,8 @@ const Signup = () => {
                 type="password"
                 placeholder="******"
                 autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div style={{ display: 'flex' }}>
@@ -74,7 +99,10 @@ const Signup = () => {
                 style={{ marginRight: '1.7rem' }}
               >
                 <label>Gender</label>
-                <select>
+                <select
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
@@ -85,10 +113,16 @@ const Signup = () => {
                 style={{ marginLeft: '1.7rem' }}
               >
                 <label>Date Of Birth</label>
-                <input type="text" placeholder="DD/MM/YYYY" />
+                <input
+                  type="date"
+                  value={dateOfBirth}
+                  onChange={(e) => setDateOfBirth(e.target.value)}
+                />
               </span>
             </div>
-            <button className={styles.signUpButton}>Signup</button>
+            <button className={styles.signUpButton} onClick={handleSignup}>
+              Signup
+            </button>
             <p style={{ color: '#452461' }}>
               Already have an account <span>Login</span>
             </p>
