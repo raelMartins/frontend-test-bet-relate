@@ -1,7 +1,7 @@
 {
-  "name": "test-react",
+  "name": "frontend-test-bet-relate",
   "version": "1.0.0",
-  "description": "Testing React",
+  "description": "A platform for betting enthusiasts to connect",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
