@@ -41,6 +41,7 @@ const Signup = () => {
       <div className={styles.logo}>
         <img src="/images/bet-relate-logo.webp" alt="Site Logo" />
       </div>
+
       <div className={styles.content}>
         <section className={styles.formSection}>
           <h1>Join Us Now</h1>
@@ -78,7 +79,6 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="eg. 10827994090"
-                autoComplete="phonenumber"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
@@ -88,7 +88,6 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="******"
-                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
