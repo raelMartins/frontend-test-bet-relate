@@ -1,0 +1,120 @@
+.signup {
+  text-align: center;
+  .logo {
+    padding: 3.2rem 5.6rem;
+    text-align: left;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.018216rem;
+    color: #673692;
+    margin: 0rem;
+    margin-bottom: 1.2rem;
+  }
+  h5 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #452461;
+    margin: 0rem;
+    margin-bottom: 3.6rem;
+  }
+  input,
+  select {
+    width: calc(100% - 2.7rem);
+    max-width: 100%;
+    background: rgba(225, 215, 233, 0.1);
+    border-radius: 0.8rem;
+    border: 0.1rem solid rgba(154, 121, 182, 0.9);
+    padding: 1.7rem 0rem;
+    margin-top: 0.4rem;
+    padding-left: 2.4rem;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #9a79b6;
+  }
+
+  ::placeholder {
+    color: #9a79b6;
+  }
+
+  .content {
+    .formSection {
+      form {
+        max-width: 45.4rem;
+        width: 90vw;
+        margin: auto;
+      }
+    }
+
+    .formField {
+      text-align: left;
+      flex: 1;
+      margin: 0.8rem 0rem;
+      label {
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.08em;
+        color: #9a79b6;
+      }
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 0.4rem;
+      span {
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+    }
+    button {
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 1.6rem;
+      border-radius: 1rem;
+      margin: 0.4rem 0rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin: 0rem 0.5rem;
+      }
+    }
+    .signUpButton {
+      font-weight: 400;
+      font-size: 1.8rem;
+      color: white;
+      background: #673692;
+      border-radius: 0.8rem;
+      margin-top: 4.6rem;
+      margin-bottom: 1.9rem;
+      font-style: normal;
+    }
+    .facebookButton {
+      color: white;
+      background-color: #1877f2;
+    }
+    .googleButton {
+      background-color: white;
+      color: rgba(0, 0, 0, 0.54);
+      box-shadow: 0rem 0rem 0.3rem rgba(0, 0, 0, 0.084),
+        0rem 0.2rem 0.3rem rgba(0, 0, 0, 0.168);
+    }
+    .imageSection {
+      padding: 7rem 4rem;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .signup {
+    .content {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
