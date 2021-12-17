@@ -126,11 +126,17 @@ const Signup = () => {
               Already have an account <span>Login</span>
             </p>
             <p>Or</p>
-            <button className={styles.facebookButton}>
+            <button
+              className={styles.facebookButton}
+              onClick={(e) => e.preventDefault()}
+            >
               <img src="/svgs/facebookicon.svg" alt="Facebook Icon" />
               Continue with Facebook
             </button>
-            <button className={styles.googleButton}>
+            <button
+              className={styles.googleButton}
+              onClick={(e) => e.preventDefault()}
+            >
               <img src="/svgs/googleicon.svg" alt="Google Icon" />
               Continue with Google
             </button>
